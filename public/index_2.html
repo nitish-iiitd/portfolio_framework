@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Interacto</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href= "{{ url_for('static',filename='css/timeline.css') }}" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<style>
+		.title{
+			/*background-color: #00a1c0;*/
+			font-family: 'Raleway', sans-serif;
+			color: #00a1c0;
+			/*background-image: url("{{ url_for('static',filename='patterns/45-degree-fabric-dark.png') }}");*/
+
+		}
+		body{
+			text-align: center;
+			/*overflow-x: hidden;*/
+			/*background-image: url("{{ url_for('static',filename='images/back_blur.jpg') }}");*/
+		}
+		#introduction{
+			text-align: center;
+			/*background-image: url("{{ url_for('static',filename='images/back_blur.jpg') }}");*/
+		}
+		.btn-outline-success:hover {
+			color: #fff;
+			background-color: #00a1c0;
+			border-color: #00a1c0;
+		}
+
+		.btn:focus, .btn:hover {
+			text-decoration: none;
+		}
+		.btn-outline-success {
+			color: #00a1c0;
+			border-color: #00a1c0;
+		}
+		.navbar-inner{
+			background:transparent;
+		}
+		.navbar a{
+			color: #00a1c0;
+		}
+
+		.navbar-expand-sm .navbar-nav .nav-link {
+			padding-right: 1rem;
+			padding-left: 1rem;
+			padding-top: 1rem;
+		}
+		#title{
+			font-size: 4em;
+			text-shadow: 1px 1px 5px #A6A7A6;
+			text-align: center;
+			font-family: 'Raleway', sans-serif;
+		}
+		#navtitle{
+			font-size: 1.5em;
+			text-shadow: 1px 1px 5px #A6A7A6;
+			text-align: center;
+			font-family: 'Raleway', sans-serif;
+			color: #00a1c0;
+		}
+		.heading{
+			font-size: 2em;
+			/*color: #FFFFFF;*/
+			text-shadow: 1px 1px 5px #A6A7A6;
+			font-family: 'Raleway', sans-serif;
+			
+		}
+		.subtitle{
+			font-size: 1.5em;
+			/*color: #FFFFFF;*/
+			text-shadow: 1px 1px 5px #A6A7A6;
+			font-family: 'Raleway', sans-serif;
+			
+		}
+		.blue{
+			color: #00a1c0;
+		}
+		.white{
+			color: #FFFFFF;
+		}
+
+		.shadow{
+			box-shadow: 10px 10px 5px #ccc;
+			-moz-box-shadow: 10px 10px 5px #ccc;
+			-webkit-box-shadow: 10px 10px 5px #ccc;
+			-khtml-box-shadow: 10px 10px 5px #ccc;
+		}
+		#design{
+			background-color: #FFFFFF;
+			color: #00a1c0;
+		}
+		#features{
+			background-color: #00a1c0;
+			color: #FFFFFF;
+			/*margin-left: -15px;
+			margin-right: -15px;*/
+		}
+		#about{
+			background-color: #00a1c0;
+			color: #FFFFFF;
+		}
+		#footernote{
+			background-color: #2C3E50;
+			color: #FFFFFF;
+		}
+
+		#footernote .simpletext{
+			text-align: justify;
+			text-justify: inter-word;
+			font-size: 1.2em;
+			background-color: #2C3E50;
+			/*color: #FFFFFF;*/
+			/*text-shadow: 1px 1px 5px #A6A7A6;*/
+			font-family: 'Raleway', sans-serif;
+		}
+
+		.featurebox{
+			background-color: #FFFFFF;
+			box-shadow: 2px 2px 5px #ccc;
+			-moz-box-shadow: 2px 2px 5px #ccc;
+			-webkit-box-shadow: 2px 2px 5px #ccc;
+			-khtml-box-shadow: 2px 2px 5px #ccc;
+			border-width: 1px;
+			border-color: #FFFFFF;
+			margin:5px;
+			color: #00a1c0;
+			padding: 20px;
+			margin-top: 50px;
+			font-size: 1.2em;
+		}
+		/*.fullwidth{
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+		.container-fluid{
+			padding-left: 0px;
+			padding-right: 0px;
+		}*/
+		.bg-light{
+			background-color: #ffffff!important;
+			opacity: 0.80;
+		}
+		.navbar-light .navbar-nav .nav-link {
+			color: rgba(0,0,0,.5);
+			padding-right: 20px;
+		}
+		.responsive {
+			width: 100%;
+			height: auto;
+		}
+		.simpletext{
+			text-align: justify;
+			text-justify: inter-word;
+			font-size: 1.2em;
+			background-color: #00a1c0;
+			/*color: #FFFFFF;*/
+			/*text-shadow: 1px 1px 5px #A6A7A6;*/
+			font-family: 'Raleway', sans-serif;
+		}
+		.timeline-title{
+			font-size: 1.2em;
+			color: #FFFFFF;
+		}
+		.timeline-panel {
+			/* position: relative; */
+			float: left;
+			/* margin-right: 40px; */
+			background: #00a1c0;
+			color: #FFFFFF;
+		}
+
+		#downloadbtn{
+			display: flex;
+			align-items: center;
+			padding:5px 10px;
+			align-self: center;
+		}
+		.vertical-align-middle { 
+			vertical-align: middle; 
+		}
+
+		.padding-bottom-3 {
+			padding-bottom: 3px;
+		}
+		#downloadsmsg{
+			font-size: 1.2em;
+			color: #6CAF6C;
+			font-family: 'Raleway', sans-serif;
+		}
+		.source a{
+			color:#4DD472;
+		}
+
+		.piccaption{
+			font-size: 1.2em;
+			color: #FFFFFF;
+			font-family: 'Raleway', sans-serif;
+			filter: blur(0px);
+		}
+		.piccaption p{
+			font-size: 1.2em;
+			color: #FFFFFF;
+			font-family: 'Raleway', sans-serif;
+			filter: blur(0px);
+			background: rgba(255,255,255,0.5); 
+		}
+		.footertext{
+			font-size: 1em;
+			padding: 0px;
+			color: #FFFFFF;
+			text-align: justify;
+			font-family: 'Raleway', sans-serif;
+		}
+
+	</style>
+	<script type="text/javascript">
+		function participate(){
+			location.href = "/participate";
+		}
+		(function() {
+
+			'use strict';
+
+  // define variables
+  var items = document.querySelectorAll(".timeline li");
+
+  // check if an element is in viewport
+  // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+  function isElementInViewport(el) {
+  	var rect = el.getBoundingClientRect();
+  	return (
+  		rect.top >= 0 &&
+  		rect.left >= 0 &&
+  		rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+  		rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  		);
+  }
+
+  function callbackFunc() {
+  	for (var i = 0; i < items.length; i++) {
+  		if (isElementInViewport(items[i])) {
+  			items[i].classList.add("in-view");
+  		}
+  	}
+  }
+
+  // listen for events
+  window.addEventListener("load", callbackFunc);
+  window.addEventListener("resize", callbackFunc);
+  window.addEventListener("scroll", callbackFunc);
+
+})();
+
+function Interacto()
+{
+
+	location.href='/Interacto';
+}
+</script>
+</head>
+<body>
+	<nav class="navbar navbar-light navbar-expand-sm fixed-top bg-light">
+		<a class="navbar-brand" href="/"><div id="navtitle">Interacto</div></a>
+
+		<!-- Toggler/collapsibe Button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<!-- Links -->
+		<div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+			<ul class="navbar-nav mr-auto"></ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="nav-item">
+					<a class="nav-link" href="#features">Features</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#gallery">Gallery</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#design">Design</a>
+				</li>
+			<!-- <li class="nav-item">
+				<a class="nav-link" href="#">Prototype</a>
+			</li> -->
+			<li class="nav-item">
+				<a class="nav-link" href="#about">About</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#team">Team</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+
+
+<div class="container-fluid">
+	<div class="row" id="introduction">
+		<div class="col-sm-1"></div>
+		<div class="col-sm-5">
+			<div class=" text-center title" >
+				<br><br><br><br><br><br>
+				<div id="title"><img src="{{ url_for('static',filename='images/white.png') }}">&nbsp;&nbsp;Interacto</div>
+				<br>
+				<div class="subtitle blue">For hassle free interactions</div>
+				<br>
+			</div>
+			<!-- <button type="button" class="btn btn-lg btn-outline-success" >Explore</button> -->
+
+			<!-- <a href="/getapp"><img style="width: 200px;height: 180px;" src="{{ url_for('static',filename='images/getbtn.png') }}"></a> -->	
+			<br><br>
+			<button type="button" class="btn btn-dark" onClick="Interacto()">Download APK
+				<span class="material-icons vertical-align-middle padding-bottom-3">file_download</span>
+			</button>
+			<br><br><br>
+			<div id="downloadsmsg">{{ downloads }} downloads</div>
+			<!-- <a href="{{ url_for('static',filename='images/tt.png') }}">hello</a> -->
+				<!-- <div class="row">
+					<div class="col-sm-3"></div>
+					<div class="col-sm-6">
+						<button id="downloadbtn" type="button" class="btn btn-dark">Download APK
+							<span class="material-icons">file_download</span>
+						</button>	
+					</div>
+					<div class="col-sm-3"></div>	
+				</div> -->
+			</div>
+			<div class="col-sm-5">
+				<br><br><br><br>
+				<img style="width: 250px;" src="{{ url_for('static',filename='images/ss.png') }}">
+				<br><br><br>
+				<br><br><br>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+
+		<div id="features">
+			<br><br><br><br><br><br>
+			<div class="row fullwidth">
+				<div class="col-sm-12">
+					<div class="heading">What all you can do</div>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+
+				<div class="col-sm-1">
+
+				</div>
+				<div class="col-sm-2 featurebox">
+					<img class="img-responsive" style="width: 130px;height: 130px;"  src="{{ url_for('static',filename='images/meeting2.png') }}">
+					<br><br>
+					Schedule meetings with TAs or Project Students
+				</div>
+				<div class="col-sm-2 featurebox">
+					<img class="img-responsive" style="width: 130px;height: 130px;"  src="{{ url_for('static',filename='images/meeting.png') }}">
+					<br><br>
+					Schedule meetings with any instructor
+				</div>
+				<div class="col-sm-2 featurebox">
+					<img class="img-responsive" style="width: 130px;height: 130px;"  src="{{ url_for('static',filename='images/list.png') }}">
+					<br><br>
+					See faculty details
+				</div>
+				<div class="col-sm-2 featurebox">
+					<img class="img-responsive" style="width: 130px;height: 130px;"  src="{{ url_for('static',filename='images/projects.png') }}">
+					<br><br>
+					Shop for open projects
+				</div>
+				<div class="col-sm-2 featurebox">
+					<img class="img-responsive" style="width: 130px;height: 130px;"  src="{{ url_for('static',filename='images/calendar.png') }}">
+					<br><br>
+					Time Table and Academic Calendar
+				</div>
+				<div class="col-sm-1">
+
+				</div>
+				<br><br><br><br><br>
+			</div>
+			<div class="row">
+				<div class="col-sm-12 source">
+					<div>Icons made by 
+						<a href="https://www.flaticon.com/authors/vectors-market" title="Vectors Market">Vectors Market</a>, 
+						<a href="https://www.flaticon.com/authors/monkik" title="monkik">monkik</a>,
+						<a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a>,
+						<a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> and
+						<a href="http://www.freepik.com" title="Freepik">Freepik</a>
+						from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> are licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+					</div>
+				</div>
+			</div>
+
+			<div id="gallery">
+				<br><br><br><br>
+				<div class="row fullwidth">
+					<div class="col-sm-12">
+						<div class="heading">Building Better Interfaces '18 @ IIIT Delhi</div>
+						<br>
+					</div>
+				</div>
+				<div class="row">
+
+					<div class="col-sm-2">
+
+					</div>
+					<div class="col-sm-8">
+						<div id="demo" class="carousel slide" data-ride="carousel">
+
+							<!-- Indicators -->
+							<ul class="carousel-indicators">
+								<li data-target="#demo" data-slide-to="0" class="active"></li>
+								<li data-target="#demo" data-slide-to="1"></li>
+								<li data-target="#demo" data-slide-to="2"></li>
+								<!-- <li data-target="#demo" data-slide-to="3"></li>class="img-fluid"  -->
+							</ul>
+
+							<!-- The slideshow -->
+							<div class="carousel-inner">
+								<div class="carousel-item active">
+									<img class="img-fluid" style="width: 650px;height:430px;" src="{{ url_for('static',filename='images/withpksir.jpg') }}" alt="Team with Dr. PK">
+									<div class="carousel-caption piccaption">
+										<p>Team with Dr. PK</p>
+										<!-- <p>We had such a great time in LA!</p> -->
+									</div>
+								</div>
+								<div class="carousel-item">
+									<img style="width: 650px;height:430px;" src="{{ url_for('static',filename='images/board.jpg') }}" alt="Interacto Board">
+									<div class="carousel-caption piccaption">
+										<p>Interato Board with Posters</p>
+										<!-- <p>We had such a great time in LA!</p> -->
+									</div>
+								</div>
+								<div class="carousel-item">
+									<img style="width: 650px;height:430px;" src="{{ url_for('static',filename='images/journey.jpg') }}" alt="Interacto Journey">
+									<div class="carousel-caption piccaption">
+										<p>Interacto Journey</p>
+										<!-- <p>We had such a great time in LA!</p> -->
+									</div>
+								</div>
+								<!-- <div class="carousel-item">
+									<img style="width: 650px;height:430px;" src="{{ url_for('static',filename='images/team.jpg') }}" alt="The Team">
+								</div> -->
+							</div>
+
+							<!-- Left and right controls -->
+							<a class="carousel-control-prev" href="#demo" data-slide="prev">
+								<span class="carousel-control-prev-icon"></span>
+							</a>
+							<a class="carousel-control-next" href="#demo" data-slide="next">
+								<span class="carousel-control-next-icon"></span>
+							</a>
+
+						</div>
+					</div>
+					<div class="col-sm-2">
+
+					</div>
+				</div>
+				<br><br><br><br>
+			</div>
+
+			<div id="design">
+				<br><br><br><br><br>
+				<div class="row fullwidth">
+					<div class="col-sm-12">
+						<div class="heading">Design Process</div>
+						<br>
+					</div>
+				</div>
+				<div class="row">
+
+					<div class="col-sm-12">
+
+						<section id="timeline" class="cd-container">
+							<div class="timeline-inverted">
+								<div class="timeline-badge img-travel"><img class="block" src="{{ url_for('static',filename='images/lightbulb.png') }}"></div>
+								<!-- timeline-badge -->
+
+								<div class="timeline-panel">
+									<div class="timeline-heading">
+										<h3 class="timeline-title">Communicating Vision and Validating Idea via Contextual Inquiry</h3>
+									</div>
+									<div class="timeline-body">
+										<p>We discussed about some common problems which students and faculy face during their day to day life. </p>
+									</div>
+								</div> <!-- timeline-panel -->
+
+
+							</div> <!-- timeline-inverted -->
+
+							<div class="timeline-inverted">
+								<div class="timeline-badge img-plan"><img class="block" src="{{ url_for('static',filename='images/diagram.png') }}"></div>
+								<!-- timeline-badge -->
+
+								<div class="timeline-panel">
+									<div class="timeline-heading">
+										<h3 class="timeline-title">Creating Affinity Diagram and Analyzing it</h3>
+									</div>
+									<div class="timeline-body">
+										<p>We wrote down the user reviews on colored sticky notes and then clustered them into groups depending on their similarity. We gave titles to these clusters.</p>
+									</div>
+								</div><!-- timeline-panel -->
+							</div> <!-- timeline-inverted -->
+
+							<div class="timeline-inverted">
+								<div class="timeline-badge img-uxui"><img class="block" src="{{ url_for('static',filename='images/flow-chart.png') }}"></div>
+								<!-- timeline-badge -->
+
+								<div class="timeline-panel">
+									<div class="timeline-heading">
+										<h3 class="timeline-title">Formalizing the Idea.</h3>
+									</div>
+									<div class="timeline-body">
+										<p>Based on the discussions among team members, we made the rough layouts of the interface.</p>
+									</div>
+								</div><!-- timeline-panel -->
+							</div> <!-- timeline-inverted -->
+
+
+							<div class="timeline-inverted">
+								<div class="timeline-badge img-tools"><img class="block" src="{{ url_for('static',filename='images/smartphone.png') }}"></div>
+								<!-- timeline-badge -->
+
+								<div class="timeline-panel">
+									<div class="timeline-heading">
+										<h3 class="timeline-title">Rapid Prototyping</h3>
+									</div>
+									<div class="timeline-body">
+										<p>We created prototypes of our app in paper and gave some users for providing the feedback.</p>
+									</div>
+								</div><!-- timeline-panel -->
+							</div> <!-- timeline-inverted -->
+
+							<div class="timeline-inverted">
+								<div class="timeline-badge img-code"><img class="block" src="{{ url_for('static',filename='images/coding.png') }}"></div>
+								<!-- timeline-badge -->
+
+								<div class="timeline-panel">
+									<div class="timeline-heading">
+										<h3 class="timeline-title">Writing Code</h3>
+									</div>
+									<div class="timeline-body">
+										<p>We started with the coding part of the application in this last phase, putting our ideas and design into a real life application.</p>
+									</div>
+								</div><!-- timeline-panel -->
+							</div> <!-- timeline-inverted -->
+
+						</section> <!-- end of section -->
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12 source">
+						<div>Icons made by 
+							<a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a>, 
+							<a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a>,
+							<a href="https://www.flaticon.com/authors/monkik" title="monkik">monkik</a> and
+							<a href="http://www.freepik.com" title="Freepik">Freepik</a>
+							from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> are licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+						</div>
+
+					</div>
+				</div>
+
+				<div id="about">
+					<br><br><br><br><br>
+					<div class="row fullwidth">
+						<div class="col-sm-12">
+							<div class="heading">About the project</div>
+							<br>
+						</div>
+					</div>
+					<div class="row">
+
+						<div class="col-sm-2">
+
+						</div>
+						<div class="col-sm-8 simpletext">
+							The project was done as part of Designing Human Centered Systems course at IIIT Delhi, under the guidance of Dr. Ponnurangam Kumaraguru ("PK") . The idea behind Interacto was to ease the process of interaction between the faculty and students, schedule meetings within a few taps, help students to find a suitable project topic as per their area of interests and at the same time assist faculty members in finding sincere and hardworking students.<br>
+
+							Interacto is a student-faculty interaction app which:<br><br>
+							1. It provides UI to find free slots common for all attendees.<br>
+							2. Helps in scheduling meetings within a few taps<br>
+							3. Notifies the user (Faculty and Students) about the upcoming lectures and meetings.<br>
+							4. Shows the consolidated list of project opening to students, so that they may get a chance to explore new problems as per their area of interest.<br>
+						</div>
+						<div class="col-sm-2">
+
+						</div>
+					</div>
+					<br><br><br><br><br><br><br>
+				</div>
+
+
+				<div id="team">
+					<br><br><br>
+					<div class="row fullwidth">
+						<div class="col-sm-12">
+							<div class="heading">The Team</div>
+						</div>
+					</div>
+
+					<div class="row">
+
+						<div class="col-sm-2">
+
+						</div>
+						<div class="col-sm-2 featurebox">
+							<img class="img-responsive" style="width: 130px;height: 130px;"  src="{{ url_for('static',filename='images/anupama.jpg') }}">
+							<br><br>
+							Anupama Balotra
+						</div>
+						<div class="col-sm-1">
+
+						</div>
+						<div class="col-sm-2 featurebox">
+							<img class="img-responsive" style="width: 130px;height: 130px;"  src="{{ url_for('static',filename='images/diksha.jpg') }}">
+							<br><br>
+							Diksha
+						</div>
+						<div class="col-sm-1">
+
+						</div>
+						<div class="col-sm-2 featurebox">
+							<img class="img-responsive" style="width: 130px;height: 130px;"  src="{{ url_for('static',filename='images/neha.jpg') }}">
+							<br><br>
+							Neha Jhamb
+						</div>
+
+						<div class="col-sm-2">
+
+						</div>
+
+					</div>
+					<div class="row">
+
+						<div class="col-sm-2">
+
+						</div>
+						<div class="col-sm-2 featurebox">
+							<img class="img-responsive" style="width: 130px;height: 130px;"  src="{{ url_for('static',filename='images/nitish.jpg') }}">
+							<br><br>
+							Nitish Srivastava
+						</div>
+						<div class="col-sm-1">
+
+						</div>
+						<div class="col-sm-2 featurebox">
+							<img class="img-responsive" style="width: 130px;height: 130px;"  src="{{ url_for('static',filename='images/neha.jpg') }}">
+							<br><br>
+							Neha Jhamb
+						</div>
+						<div class="col-sm-1">
+
+						</div>
+						<div class="col-sm-2 featurebox">
+							<img class="img-responsive" style="width: 130px;height: 130px;"  src="{{ url_for('static',filename='images/divya.jpg') }}">
+							<br><br>
+							V. Divya Sharma
+						</div>
+
+						<div class="col-sm-2">
+
+						</div>
+						<br><br><br><br><br>
+					</div>
+				</div>
+
+
+
+				<div id="footernote">
+					<br><br>
+					<div class="row">
+
+						<div class="col-sm-1">
+
+						</div>
+						<div class="col-sm-2 simpletext">
+							<img src="{{ url_for('static',filename='images/white.png') }}">&nbsp;&nbsp;Interacto <br>
+						</div>
+						<div class="col-sm-3 simpletext footertext">
+							Address<hr>
+							<p><i class="material-icons vertical-align-middle padding-bottom-3">home</i> IIIT Delhi, New Delhi, India</p>
+							
+						</div>
+						<div class="col-sm-5 simpletext footertext">
+							Contact Us<hr>
+							<div class="row">
+
+								<div class="col-sm-6">
+									<p><i class="material-icons vertical-align-middle padding-bottom-3">email</i> anupama16011@iiitd.ac.in</p>
+									<p><i class="material-icons vertical-align-middle padding-bottom-3">email</i> diksha16017@iiitd.ac.in</p>
+									<p><i class="material-icons vertical-align-middle padding-bottom-3">email</i> neha16037@iiitd.ac.in</p>
+								</div>
+								<div class="col-sm-6">
+								<p><i class="material-icons vertical-align-middle padding-bottom-3">email</i> nitish16038@iiitd.ac.in</p>
+									<p><i class="material-icons vertical-align-middle padding-bottom-3">email</i> raveena16046@iiitd.ac.in</p>
+									<p><i class="material-icons vertical-align-middle padding-bottom-3">email</i> divya16059@iiitd.ac.in</p>
+
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-1">
+
+						</div>
+					</div>
+					<div class="row">
+
+						<div class="col-sm-12">
+							<!--Copyright-->
+							<div class="text-center">
+								© 2018 Copyright: Interacto
+							</div>
+							<!--/.Copyright-->
+						</div>
+					</div>
+					<br>
+				</div>
+
+
+
+
+
+
+			</div>
+
+		</body>
+		</html>

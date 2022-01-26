@@ -1,0 +1,62 @@
+{
+	"full_name" : "Nitish Srivastava",
+	"first_name" : "Nitish",
+	"last_name" : "Srivastava",
+	"email_id" : "nitish2794@gmail.com",
+	"phone" : "+91-9958087983",
+	"dob" : "27th August, 1994",
+
+	"education" : [
+		{
+			"institute" : "Indraprastha Institute of Information Technology, New Delhi",
+			"degree" : "M.tech(Data Engineering)",
+			"score_type" : "CGPA",
+			"score_value" : "8.63",
+			"duration" : "2016-2018"
+		},
+		{
+			"institute" : "Indraprastha Institute of Information Technology, New Delhi",
+			"degree" : "M.tech(Data Engineering)",
+			"score_type" : "CGPA",
+			"score_value" : "8.63",
+			"duration" : "2016-2018"
+		}
+	],
+
+	"skills" : [
+		{
+			"skill_name" : "",
+			"logo_image" : ""
+		}
+	],
+
+	"achievements" : [
+		"",
+		"",
+		""
+	],
+
+	"projects" : [
+		{
+			"project_name" : "",
+			"project_duration" : "",
+			"project_guide" : "",
+			"team_size" : "",
+			"description" : "",
+			"language_used" : "",
+			"technology_used" : ""
+		}
+	],
+
+	"experience" : [
+		{
+			"organization_name" : "",
+			"experience_type" : "",
+			"work_duration" : "",
+			"role" : "",
+			"supervisor" : "",
+			"work_description" : ""
+		}
+	]
+
+}

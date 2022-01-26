@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>PersonifyMe</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <style>
+    .title{
+      background-color: #5CA975;
+      font-family: 'Raleway', sans-serif;
+      color: #FFFFFF;
+      background-image: url("{{ url_for('static',filename='patterns/45-degree-fabric-dark.png') }}");
+
+    }
+    body{
+      text-align: center;
+    }
+    .btn-outline-success:hover {
+        color: #fff;
+        background-color: #5CA975;
+        border-color: #5CA975;
+    }
+
+    .btn:focus, .btn:hover {
+        text-decoration: none;
+    }
+    .btn-outline-success {
+    color: #5CA975;
+    border-color: #5CA975;
+}
+
+  </style>
+  <script type="text/javascript">
+    function participate(){
+      location.href = "/participate";
+    }
+  </script>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <a class="navbar-brand" href="/">PersonifyMe</a>
+  <!-- Links -->
+  <ul class="navbar-nav mr-auto"></ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Participate</a>
+    </li>
+  </ul>
+
+</nav>
+
+<div class="jumbotron text-center title" >
+<br><br><br>
+  <h1>PersonifyMe - Personality Predictor</h1><br><hr><br>
+  <h5>Just few clicks and get your personality predicted using the standard BIG-5 Model!</h5> 
+  <h5>Also, contribute to the research!</h5> 
+</div>
+  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <!-- <h3>Column 2</h3> -->
+      <button type="button" class="btn btn-lg btn-outline-success" onclick="participate()" >I want to participate !</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
